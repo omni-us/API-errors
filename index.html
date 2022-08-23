@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background: #317eff; font-family: Open Sans,Helvetica,Arial,sans-serif;" onload="prettyJson()">
+    <script>
+        function prettyJson() {
+        var data = {
+            "type": "",
+            "title": "Constraint Violation",
+            "status": 400,
+            "violations": [
+                {
+                "field": "name",
+                "message": "must not be null"
+                },
+                {
+                "field": "groups",
+                "message": "must not be empty"
+                }
+            ]
+            }
+        
+        document.getElementById("json").innerHTML = JSON.stringify(data, undefined, 2);
+        }
+    </script>
+    <h1 style="font-size: 50px; text-align: center; color: white;">Problem</h1>
+    <div style="width: 60%; min-width: 400px; margin-left: auto; margin-right: auto; background-color: white; padding: 40px; padding-top: 20px;">
+        <h1 style="text-align: center;">Constraint Violation</h1>
+        <p style="font-size: 18px;">Syntactically correct, semantically illegal request. It is usually produced from field validations. It exists to help API consumers to spot the mistakes in the request.</p>
+        <p style="font-size: 18px">Example:</p>
+        <div style="font-size: 18px; border: 1px solid grey; color: #8B0000; padding: 20px; padding-top: 10px; padding-bottom: 10px;">
+            <code>
+                <pre id="json"></pre>    
+            </code>
+        </div>
+    </div>
+    <h1 style="color: white; font-size: 56px; text-align: center;">omni:us</h1>
+</body>
+</html>
