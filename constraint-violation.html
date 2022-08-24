@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Constraint Violation</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
-<body style="background: #317eff; font-family: Open Sans,Helvetica,Arial,sans-serif;" onload="prettyJson()">
+<body onload="prettyJson()">
     <script>
         function prettyJson() {
         var data = {
@@ -29,12 +31,15 @@
         document.getElementById("json").innerHTML = JSON.stringify(data, undefined, 2);
         }
     </script>
-    <h1 style="font-size: 56px; text-align: center; color: white;">omni:us</h1>
-    <div style="width: 60%; min-width: 400px; margin-left: auto; margin-right: auto; background-color: white; padding: 40px; padding-top: 20px;">
-        <h1 style="text-align: center;">Constraint Violation</h1>
-        <p style="font-size: 18px;">Syntactically correct, semantically illegal request. It is usually produced from field validations. It exists to help API consumers to spot the mistakes in the request.</p>
-        <p style="font-size: 18px">Example:</p>
-        <div style="font-size: 18px; border: 1px solid grey; color: #8B0000; padding: 20px; padding-top: 10px; padding-bottom: 10px;">
+    <div class="w3-padding w3-xlarge back">
+        <a href="/API-problems/index"><i class="material-icons">arrow_back</i></a>
+    </div>
+    <h1 class="logo">omni:us</h1>
+    <div class="container">
+        <h1>Constraint Violation</h1>
+        <p>Syntactically correct, semantically illegal request. It is usually produced from field validations. It exists to help API consumers to spot the mistakes in the request.</p>
+        <p>Example:</p>
+        <div class="codeblock">
             <code>
                 <pre id="json"></pre>    
             </code>
