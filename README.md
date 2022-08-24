@@ -1,9 +1,9 @@
 
-# API Error pages
+# API Problem pages
 
 ## Project Overview
 
-You should find all public error information about DocAI here.
+You should find all public problem information about DocAI here.
 
 # Project Steering Committee (PSC)
 
