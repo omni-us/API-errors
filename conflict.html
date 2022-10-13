@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Constraint Violation</title>
+    <title>Conflict</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -13,19 +13,10 @@
     <script>
         function prettyJson() {
         var data = {
-            "type": "https://omni-us.github.io/API-problems/constraint-violation",
-            "title": "Constraint Violation",
-            "status": 400,
-            "violations": [
-                {
-                "field": "name",
-                "message": "must not be null"
-                },
-                {
-                "field": "groups",
-                "message": "must not be empty"
-                }
-            ]
+            "type": "https://omni-us.github.io/API-problems/conflict",
+            "title": "Conflict",
+            "status": 409,
+            "detail": "Collection with name [name] already exists"
             }
         
         document.getElementById("json").innerHTML = JSON.stringify(data, undefined, 2);
@@ -36,8 +27,10 @@
     </div>
     <h1 class="logo">omni:us</h1>
     <div class="container">
-        <h1>Constraint Violation</h1>
-        <p>Syntactically correct, semantically illegal request. It is usually produced from field validations. It exists to help API consumers to spot the mistakes in the request.</p>
+        <h1>Conflict</h1>
+        <p>Syntactically and semantically correct request, but there is a conflict with the current state of the target resource. 
+            Conflicts are most likely to occur in response to a <b>PUT</b> request. 
+            It is usually produced when some field is unique and field with that value already exists.</p>
         <p>Example:</p>
         <div class="codeblock">
             <code>
