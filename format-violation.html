@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Format Violation</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body onload="prettyJson()">
+    <script>
+        function prettyJson() {
+        var data = {
+            "type": "https://omni-us.github.io/API-problems/format-violation",
+            "title": "Format Violation",
+            "status": 400,
+            "violations": [
+                {
+                "field": "id",
+                "message": "Cannot deserialize value of type `java.util.UUID` from String \"example\": UUID has to be represented by standard 36-char representation"
+                }
+            ]
+            }
+        
+        document.getElementById("json").innerHTML = JSON.stringify(data, undefined, 2);
+        }
+    </script>
+    <div class="w3-padding w3-xlarge back">
+        <a href="/API-problems"><i class="material-icons">arrow_back</i></a>
+    </div>
+    <h1 class="logo">omni:us</h1>
+    <div class="container">
+        <h1>Format Violation</h1>
+        <p>Syntactically illegal request. It is produced when an illegal format for a parameter value is passed. It can happen in every HTTP method.
+             Applicable to request parameter and request body.</p>
+        <p>Example:</p>
+        <div class="codeblock">
+            <pre id="json"></pre>
+        </div>
+    </div>
+</body>
+</html>
